@@ -1,5 +1,5 @@
 # OracleDBScripts
-This repository contains scripts for DBA operations on Oracle Database. The following code is my own, and not by Oracle Corporation. This is only for testing and learning purposes, use it in production by your own risk.
+This repository contains scripts for DBA operations on Oracle Database. The following code is my own, and not by Oracle Corporation. This is only for testing and learning purposes, use it in production at your own risk.
 
 The following was tested on 18c in CDB architecture (it works on a PDB).
 
