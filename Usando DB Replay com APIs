@@ -1,6 +1,8 @@
 Documentação Oficial: https://docs.oracle.com/en/database/oracle/oracle-database/19/ratug/database-replay.html#GUID-C5CAF3E6-0F1C-4BD6-BC03-F71744AD600E
 ToDo: incluir passos quando ambiente for RAC
 
+Nota: sempre ler MOS Doc ID 560977.1 antes de usar o RAT
+
 ---------------------------------------------------------
 --- Captura de Workload e Replay no 19c ---
 ---------------------------------------------------------
