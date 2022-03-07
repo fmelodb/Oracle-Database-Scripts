@@ -11,3 +11,7 @@ O seguinte foi testado em 12.1 (captura) e 19c (reprodução):
 <B>Usando_SPA_com_APIs</B>: Usando SQL Performance Analyzer para comparar a performance dos SQLs na origem e destino.
 
 <B>Usando_DBReplay_com_APIs</B>: Usando Database Replay para comparar a performance dos SQLs na origem e destino com concorrência.
+
+O seguinte foi testado no ExaCS:
+
+<B>Criar ACFS no Exadata</B>: Roteiro para criar filesystem acfs no Exadata/ExaCS
