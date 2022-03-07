@@ -1,5 +1,7 @@
 Documentação Oficial: https://docs.oracle.com/en/database/oracle/oracle-database/19/ratug/sql-performance-analyzer.html#GUID-8CE976A3-FB73-45FF-9B18-A6AB3F158A95
 
+Nota: sempre ler MOS Doc ID 560977.1 antes de usar o RAT
+
 ---------------------------------------------------------
 --- Captura de SQL Tuning Sets e Teste ---
 ---------------------------------------------------------
