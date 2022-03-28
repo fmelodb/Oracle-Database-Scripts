@@ -247,16 +247,14 @@ CREATE DUPLICATED TABLE Products
 , Price       NUMBER(6,2)) TABLESPACE products_tsp;
 
 
+Connections using Direct Routing: use gsm/director endpoint (ip address/hostname) and pass the sharding key and app database service (oltp_rw_srvc in this example)
+Connections using Proxy Routing: use gsm/director endpoint (ip address/hostname) and connect to the catalog service (gds$catalog)
+
 -- connect to the catalog (proxy routing for multi-shard query) example
-CONNECT app_schema/"SuperStr0ngPa##w0rd"@mlcatalog.subnet.vcn.oraclevcn.com:1522/oltp_rw_srvc.orasdb.oradbcloud
+CONNECT app_schema/"password"@gsm-server.subnet.vcn.oraclevcn.com:1522/GDS$CATALOG.oradbcloud
 
 -- connect to the gsm using sharding key (direct routing) example
-connect app_schema/"SuperStr0ngPa##w0rd"@'(description=(address=(protocol=tcp)(host=gsm-server.subnet.vcn.oraclevcn.com)(port=1522))(connect_data=(service_name=oltp_rw_srvc.orasdb.oradbcloud)(region=regionora)(SHARDING_KEY=1)))'
+connect app_schema/"password"@'(description=(address=(protocol=tcp)(host=gsm-server.subnet.vcn.oraclevcn.com)(port=1522))(connect_data=(service_name=oltp_rw_srvc.orasdb.oradbcloud)(region=regionora)(SHARDING_KEY=1)))'
 
--- connect directly to the shard 1 example
-connect app_schema/"password"@'(description=(address=(protocol=tcp)(host=mlsh01.subnet.vcn.oraclevcn.com)(port=1521))(connect_data=(service_name=oltp_rw_srvc.orasdb.oradbcloud)(region=regionora)))'
-
--- connect directly to the shard 2 example
-connect app_schema/"password"@'(description=(address=(protocol=tcp)(host=mlsh02.subnet.vcn.oraclevcn.com)(port=1521))(connect_data=(service_name=oltp_rw_srvc.orasdb.oradbcloud)(region=regionora)))'
 
 
