@@ -1,16 +1,17 @@
 
-Official documentation: https://docs.oracle.com/en/database/oracle/oracle-database/19/shard/sharding-overview.html#GUID-0F39B1FB-DCF9-4C8A-A2EA-88705B90C5BF
+OFFICIAL DOCUMENTATION: https://docs.oracle.com/en/database/oracle/oracle-database/19/shard/sharding-overview.html#GUID-0F39B1FB-DCF9-4C8A-A2EA-88705B90C5BF
 
-You should follow official recommendation. The procedure in this script is only for testing purposes, but you can use it as a baseline to create a 
+YOU SHOULD FOLLOW OFFICIAL DOCUMENTATION. The procedure in this script is only for testing purposes, but you can use it as a baseline to create a 
 production setup.
 
 Please read the documentation first before running these setups in order to understand the Oracle Sharding concepts.
 
-The following Oracle DB Sharding installation is based on System-Managed method, where tables are split by a surrogate key in the shards, such as 
-customer id for example. The Shards and Catalog databases were created using DBCS VMs. Not a problem if you do the same using IaaS. 
+The following Oracle DB Sharding installation is based on System-Managed method, where table rows are distributed by a hash primary key in the shards, 
+such as customer id for example. The Shards and Catalog databases were created using DBCS VMs. Not a problem if you do the same using IaaS. 
 
-You could create a custom image on IaaS to represent a gold image for the shards, and use it whenever you need to add more shards. The same apply 
-for DBCS (but in this case you would have to have a configured dummy instance to always create a new shard from).
+For adding new shards, if using IaaS, you could create a custom image of on IaaS to represent a gold image for the shards. For DBCS shards, you would have 
+to have a configured dummy instance to always create a new shard from -- or create a new one from scratch and run a script to configure it properly to
+make it similar to the other shards (db params, TDE configs, etc).
 
 The topology considers the following:
 
@@ -73,10 +74,12 @@ alter database force logging;
 shutdown immediate
 startup
 
-Note: some parameters are over-estimated. You should know how many shards and chunks you would need to set open links and db files parameters.
+Note: some parameters are over-estimated. You should know how many shards and chunks you would need to set open links and db files
+parameters (read the docs).
 
 7. Comment SQLNET network encryption entries on sqlnet.ora file on the catalog server (if you dont need network encryption), and all tnsnames 
-(shards and catalog) should have entries for all the database CDBs.
+(shards and catalog) should have entries for all the database CDBs. You should configure network encryption on gsm server if you want it to be configured
+(it`s default on DBCS VM databases).
 
 ### Director server (gsm) ##################
 
