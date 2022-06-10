@@ -10,5 +10,6 @@ Este repositório contém scripts para operações de DBA no banco de dados Orac
 
 <B>Criar ACFS no Exadata</B>: Roteiro para criar filesystem acfs no Exadata/ExaCS
 
-
 <B>Sharding using System-Managed method</B>: Roteiro para criar um deploy de Oracle Sharding, com DBCS, usando a topologia System-Managed. Comentários estão em inglês.
+
+<B> ExaDB-S Manual Backup using dbaascli </B>: passo-a-passo sobre como utilizar dbaascli para fazer backup manual
