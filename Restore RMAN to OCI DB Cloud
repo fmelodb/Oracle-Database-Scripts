@@ -2,8 +2,8 @@
 ########################## Pre-Requerimentos
 
 - Backup RMAN com controlfile incluído (disponível por FSS)
-- pfile da origem
-
+- PFILE da origem (deve revisar e sincronizar os relevantes parâmetros da origem e destino)
+- Atentar-se ao Release Update do destino (aplicar datapatch após o recover se a origem for inferior) e one-off patches
 
 ########################## Passo 1 - criar o banco pela API
 
