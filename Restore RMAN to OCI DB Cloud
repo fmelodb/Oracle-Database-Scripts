@@ -96,7 +96,7 @@ catalog start with '[mount point FSS]nome_arquivo_backup_' noprompt;
 
 
 RUN {
-  SET UNTIL CANCEL;
+  SET UNTIL SEQUENCE xx THREAD XX;
   SET NEWNAME FOR DATABASE TO '+DATA';
   RESTORE DATABASE;
   SWITCH DATAFILE ALL;
